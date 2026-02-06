@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-big-shoulders: "Big Shoulders", sans-serif;
+    --font-anton: "Anton", sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
+    --button-background-color-hover: #e4e4e4;
+    --button-background-color-focus: #b6b6b6;
+}
+
+body {
+    background-color: #DCF1FF;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    gap: 75%;
+    background-color: #B5B5B5;
+    width: 100%;
+}
+
+.header-link {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    gap: 5%;
+}
+
+.header-title {
+    font-family: var(--font-big-shoulders);
+    font-weight: 500;
+    font-size: 30px;
+}

@@ -1,0 +1,139 @@
+main {
+    margin: 3% 1.5%;
+}
+
+.task-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.task-list-empty {
+    color: black;
+    font-family: var(--font-big-shoulders), sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.task-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    list-style: none;
+    width: 350px;
+    background-color: white;
+    border-radius: 15px;
+    justify-content: space-between;  
+    gap: 10px;
+    transition: box-shadow 0.4s ease;
+    cursor: default;
+}
+
+.task-item:hover {
+    box-shadow: -5px 5px black;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    overflow: hidden;
+    font-family: var(--font-anton);
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 90%;
+}
+
+
+.task-status-icon {
+    position: absolute;
+    top: 8%;
+    right: 0;
+    margin-right: 10px;
+}
+
+.task-status-icon:hover {
+    transform: scale(1.15);
+    transition-duration: 0.4s;
+}
+
+.task-date {
+    font-family: var(--font-montserrat);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.task-description {
+    font-family: var(--font-montserrat);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.button-container {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+.task-item:hover .button-container {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.status.pending {
+    color: grey;
+}
+
+.status.concluded {
+    color: green;
+}
+
+.status.expired {
+    color: red;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.task-button {
+    user-select: none;
+    padding: 2px 5px;
+    border: 3px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    font-family: var(--font-anton);
+    font-weight: 500;
+    font-size: 20px;
+    width: 120px;
+    transition: background-color 0.4s ease;
+}
+
+.task-button:hover {
+    background-color: #e4e4e4;
+}
+
+.task-button:focus {
+    background-color: #b6b6b6;
+}
