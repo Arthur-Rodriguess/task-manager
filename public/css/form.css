@@ -30,8 +30,6 @@ main {
 }
 
 #submit-button {
-    opacity: 0;
-    transform: translateY(15px);
     font-family: var(--font-anton), sans-serif;
     line-height: 1;
     background-color: transparent;
@@ -41,11 +39,6 @@ main {
     cursor: pointer;
 }
 
-.form:hover #submit-button {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 #submit-button:hover {
     background-color: var(--button-background-color-hover);
 }
@@ -53,4 +46,8 @@ main {
 #submit-button:focus {
     background-color: var(--button-background-color-focus);
     transition-duration: 0.1s;
+}
+
+.form-text {
+    font-family: var(--font-montserrat), sans-serif;
 }
