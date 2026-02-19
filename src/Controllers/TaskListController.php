@@ -4,7 +4,7 @@ namespace TaskManager\Controllers;
 
 use TaskManager\Model\Repository\TaskRepository;
 
-class TaskListController implements Controller
+class TaskListMiddleware extends AuthenticatedController
 {
     public function __construct(private TaskRepository $taskRepository)
     {
@@ -12,8 +12,10 @@ class TaskListController implements Controller
 
     public function processaRequisicao(): void
     {
+		$userId = $this->requireLogin();
+
 		$this->taskRepository->expireTasks();
-		$taskList = $this->taskRepository->all();
+		$taskList = $this->taskRepository->all($userId);
 		foreach ($taskList as $task) {
 			$task->recalculateStatus();
 		}
