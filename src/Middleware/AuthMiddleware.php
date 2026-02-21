@@ -6,8 +6,9 @@ class AuthMiddleware
 {
 	public static function handle(): void
 	{
-		if(!isset($_SESSION['logado'])) {
+		if(empty($_SESSION['user'])) {
 			header("Location: /login");
+			exit();
 		}
 	}
 }
