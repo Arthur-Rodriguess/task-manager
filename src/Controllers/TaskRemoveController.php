@@ -4,7 +4,7 @@ namespace TaskManager\Controllers;
 
 use TaskManager\Model\Repository\TaskRepository;
 
-class TaskRemoveController implements Controller
+class TaskRemoveController extends AuthenticatedController
 {
 	public function __construct(private TaskRepository $taskRepository)
 	{
@@ -12,14 +12,15 @@ class TaskRemoveController implements Controller
 
 	public function processaRequisicao(): void
 	{
+		$userId = $this->requireLogin();
 		$id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 
-		if ($this->taskRepository->find($id) === null) {
+		if ($this->taskRepository->find($id, $userId) === null) {
 			header("Location: /?success=0");
 			exit();
 		}
 
-		if ($this->taskRepository->remove($id)) {
+		if ($this->taskRepository->remove($id, $userId)) {
 			header("Location: /?success=1");
 		} else {
 			header("Location: /?success=0");
