@@ -6,12 +6,12 @@ abstract class AuthenticatedController implements Controller
 {
 	protected function requireLogin(): int
 	{
-		$userId = $_SESSION['user_id'] ?? null;
-		if(!$userId) {
+		$user = $_SESSION['user'] ?? null;
+		if(!$user) {
 			header("Location: /login");
 			exit();
 		}
 
-		return $userId;
+		return $user->id;
 	}
 }
