@@ -15,6 +15,7 @@ class Task
         public readonly string $title,
         public readonly string $description,
         string $date,
+		public readonly int $userId,
         private Status $status = Status::Pending
     )
     {
