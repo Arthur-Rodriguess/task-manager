@@ -1,6 +1,7 @@
 <?php
 /** @var \TaskManager\Model\Entity\Task|null $task */
 require_once __DIR__ . "/header-html.php"; ?>
+<?php require_once __DIR__ . "/aside-html.php"; ?>
     <main>
         <h1 class="form-title">Escreva a sua tarefa!</h1>
         <form class="form" method="post">

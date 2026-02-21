@@ -3,6 +3,7 @@
 use TaskManager\Helpers\TaskViewHelper;
 
 require_once __DIR__ . "/header-html.php";
+require_once __DIR__ . "/aside-html.php";
 ?>
     <main>
         <?php if(!empty($taskList)): ?>
