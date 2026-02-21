@@ -10,7 +10,7 @@ class LogoutController implements Controller
 
 	public function processaRequisicao(): void
 	{
-		if(!isset($_SESSION['logado'])) {
+		if(empty($_SESSION['user'])) {
 			header("Location: /login");
 			exit();
 		}
