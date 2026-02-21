@@ -6,7 +6,7 @@ use TaskManager\Helpers\Status;
 use TaskManager\Model\Entity\Task;
 use TaskManager\Model\Repository\TaskRepository;
 
-class TaskEditController implements Controller
+class TaskEditController extends AuthenticatedController
 {
 	public function __construct(private TaskRepository $taskRepository)
 	{
@@ -14,6 +14,7 @@ class TaskEditController implements Controller
 
 	public function processaRequisicao(): void
 	{
+		$user_id = $this->requireLogin();
 
 		$id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
 		$title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -25,7 +26,7 @@ class TaskEditController implements Controller
 			exit();
 		}
 
-		$task = new Task($title, $description, $date, Status::Pending);
+		$task = new Task($title, $description, $date, $user_id, Status::Pending);
 
 		$task->setId($id);
 
