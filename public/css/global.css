@@ -23,7 +23,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
-    gap: 75%;
     background-color: #B5B5B5;
     width: 100%;
 }
@@ -40,4 +39,100 @@ header {
     font-family: var(--font-big-shoulders);
     font-weight: 500;
     font-size: 30px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.user-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.user-toggle img {
+    border-radius: 50%;
+}
+
+.user-name {
+    font-family: var(--font-montserrat), sans-serif;
+    font-weight: 600;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar-header {
+    font-family: var(--font-montserrat), sans-serif;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-header img {
+    border-radius: 50%;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-nav a {
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar-nav a:hover {
+    background: #f4f4f4;
+}
+
+.logout-btn {
+    font-family: var(--font-montserrat), sans-serif;
+    color: red;
+    font-weight: 600;
+}
+
+.sidebar-nav a.logout-btn {
+    color: #d32f2f;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 1000;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
 }
