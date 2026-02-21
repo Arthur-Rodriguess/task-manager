@@ -33,8 +33,11 @@ class LoginController implements Controller
 				$this->userRepository->upgradePasswordHash($user->getId(), $newHash);
 			}
 
-			$_SESSION['logado'] = true;
-			$_SESSION['user_id'] = $user->getId();
+			$_SESSION['user'] = (object) [
+				'id' => $user->getId(),
+				'name' => $user->username,
+				'email' => $user->email,
+			];
 			header("Location: /?login_success=1");
 		} else {
 			header("Location: /login?login_success=0");
