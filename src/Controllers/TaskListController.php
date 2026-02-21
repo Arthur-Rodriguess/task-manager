@@ -4,7 +4,7 @@ namespace TaskManager\Controllers;
 
 use TaskManager\Model\Repository\TaskRepository;
 
-class TaskListMiddleware extends AuthenticatedController
+class TaskListController extends AuthenticatedController
 {
     public function __construct(private TaskRepository $taskRepository)
     {
